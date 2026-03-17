@@ -3,7 +3,7 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-![Max Faingezicht](/max-faingezicht.jpg)
+<img src="/max-faingezicht.jpg" alt="Max Faingezicht" style="width: 180px; border-radius: 8px;" />
 
 I'm Max Faingezicht, an entrepreneur excited about the future of work and creating opportunity around the globe.
 
