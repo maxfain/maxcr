@@ -57,21 +57,32 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       <aside
         class="mt-6 border border-s-2 border-border border-s-accent px-4 py-3"
       >
-        <p class="text-sm text-accent">New book</p>
-        <p class="mt-1 text-lg font-semibold">The Revenue Engine</p>
-        <p class="mt-1">
-          A go-to-market guide for startup founders. With Emmanuelle Skala and
-          Adam Blake. Out January 20, 2027.
-        </p>
-        <LinkButton
-          class="mt-2"
-          href="https://www.d-eship.com/revenue-engine"
-          target="_blank"
-          rel="noopener"
-        >
-          Learn more
-          <IconArrowRight class="inline-block rtl:-rotate-180" />
-        </LinkButton>
+        <div class="flex items-start gap-4">
+          <img
+            src="/revenue-engine-cover.jpg"
+            alt="The Revenue Engine book cover"
+            width="96"
+            height="96"
+            class="w-24 shrink-0"
+          />
+          <div>
+            <p class="text-sm text-accent">New book</p>
+            <p class="mt-1 text-lg font-semibold">The Revenue Engine</p>
+            <p class="mt-1">
+              A go-to-market guide for startup founders. With Emmanuelle Skala
+              and Adam Blake. Out January 20, 2027.
+            </p>
+            <LinkButton
+              class="mt-2"
+              href="https://www.amazon.com/Disciplined-Entrepreneurship-Revenue-Engine-Aulet/dp/1394357591"
+              target="_blank"
+              rel="noopener"
+            >
+              Pre-order
+              <IconArrowRight class="inline-block rtl:-rotate-180" />
+            </LinkButton>
+          </div>
+        </div>
       </aside>
     </section>
 
