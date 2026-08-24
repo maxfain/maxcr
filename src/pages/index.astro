@@ -42,7 +42,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       </a>
 
       <p>
-        Excited about the future of work and creating opportunity around the globe.
+        Excited about the future of work and creating opportunity around the
+        globe.
       </p>
       {
         // only display if at least one social link is enabled
@@ -52,6 +53,26 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           </div>
         )
       }
+
+      <aside
+        class="mt-6 border border-s-2 border-border border-s-accent px-4 py-3"
+      >
+        <p class="text-sm text-accent">New book</p>
+        <p class="mt-1 text-lg font-semibold">The Revenue Engine</p>
+        <p class="mt-1">
+          A go-to-market guide for startup founders. With Emmanuelle Skala and
+          Adam Blake. Out January 20, 2027.
+        </p>
+        <LinkButton
+          class="mt-2"
+          href="https://www.d-eship.com/revenue-engine"
+          target="_blank"
+          rel="noopener"
+        >
+          Learn more
+          <IconArrowRight class="inline-block rtl:-rotate-180" />
+        </LinkButton>
+      </aside>
     </section>
 
     {
