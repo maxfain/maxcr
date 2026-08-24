@@ -1,0 +1,90 @@
+---
+import IconX from "@/assets/icons/IconX.svg";
+
+const AMAZON_URL =
+  "https://www.amazon.com/Disciplined-Entrepreneurship-Revenue-Engine-Aulet/dp/1394357591";
+---
+
+<div
+  id="site-announcement"
+  class="w-full border-b border-border bg-background"
+  role="region"
+  aria-label="The Revenue Engine"
+  data-storage-key="maxcr:hide-revenue-engine-banner"
+>
+  <div class="relative app-layout py-2 text-sm">
+    <a
+      href={AMAZON_URL}
+      class="block pe-8 text-pretty hover:text-accent sm:pe-0 sm:text-center"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      The Revenue Engine — MIT Disciplined Entrepreneurship go-to-market guide.
+      Wiley, January 2027.
+      <span class="sr-only"> Opens Amazon in a new tab.</span>
+    </a>
+    <button
+      id="site-announcement-dismiss"
+      type="button"
+      class="focus-outline absolute end-4 top-1/2 -translate-y-1/2 p-1 hover:text-accent sm:end-0"
+      aria-label="Dismiss announcement"
+    >
+      <IconX class="size-4" aria-hidden="true" />
+    </button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    try {
+      if (localStorage.getItem("maxcr:hide-revenue-engine-banner") === "1") {
+        const el = document.getElementById("site-announcement");
+        if (el) el.hidden = true;
+      }
+    } catch {
+      /* localStorage can throw in privacy modes */
+    }
+  })();
+</script>
+
+<script>
+  function bindAnnouncementBanner() {
+    const banner = document.querySelector("#site-announcement");
+    const dismiss = document.querySelector("#site-announcement-dismiss");
+
+    if (!(banner instanceof HTMLElement) || !(dismiss instanceof HTMLElement)) {
+      return;
+    }
+
+    const storageKey = banner.dataset.storageKey;
+    if (!storageKey) return;
+
+    try {
+      if (localStorage.getItem(storageKey) === "1") {
+        banner.hidden = true;
+        return;
+      }
+    } catch {
+      /* ignore unavailable storage */
+    }
+
+    if (dismiss.dataset.bound === "true") return;
+    dismiss.dataset.bound = "true";
+
+    dismiss.addEventListener("click", () => {
+      try {
+        localStorage.setItem(storageKey, "1");
+      } catch {
+        /* ignore unavailable storage */
+      }
+
+      banner.hidden = true;
+
+      const homeLink = document.querySelector('header a[href="/"]');
+      if (homeLink instanceof HTMLElement) homeLink.focus();
+    });
+  }
+
+  bindAnnouncementBanner();
+  document.addEventListener("astro:after-swap", bindAnnouncementBanner);
+</script>
