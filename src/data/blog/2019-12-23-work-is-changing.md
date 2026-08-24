@@ -21,7 +21,7 @@ These new generations are the flexible-work natives, the ones who are questionin
 As a species, we've been worried about "the future of work" for quite some time. Since the 1700's and 1800's with the Industrial Revolution and the advent of machines, engines and assembly lines, to today with computers and machine learning. [MIT has even dedicated a Taskforce to research the Future of Work.](https://workofthefuture.mit.edu/)
 
 > "Emerging technologies and policies can be leveraged toward a shared prosperity"
-> 
+>
 > MIT Work of the Future Report
 
 We live in a world where automation and AI are obviously advancing at a fast pace and we're seeing that computers are better at many tasks than humans. This means that the jobs we do and the way we work will change. I have been thinking about this a lot lately.
@@ -31,7 +31,7 @@ We live in a world where automation and AI are obviously advancing at a fast pac
 Here is a short blurb from the [podcast](https://youtu.be/3qHkcs3kG44), but please go and listen to the whole thing.
 
 > "... I think the smart people have already started figuring out that the internet enables this. And they're starting to work more and more remotely on their own schedule, on their own time, on their own place, with their own friends, in their own way. And that's actually how we are the most productive ... we're gonna go back to being small groups of creative bands of individuals, setting out to do missions. And when those missions are done, we collect our money, we get rated, and then we rest and reassess until we're ready for the next sprint."
-> 
+>
 > Naval Ravikant, https://youtu.be/3qHkcs3kG44
 
 As I thought more about these smart people and how they find these [flexible remote jobs](https://blog.telescoped.com/2019/12/20/remote-work-is-going-mainstream-lets-party-like-its-2020-not-1820/), it became clear that a lot of it hinged on reputation and trust. Julie's example above demonstrates this. The job itself could be easily scoped and done remotely but some things needed to happen for her to negotiate that way of working.
@@ -39,7 +39,7 @@ As I thought more about these smart people and how they find these [flexible rem
 Those things have become my obsession. How can you reduce friction for remote workers to effectively work with established companies? How can you build the right protocols to spin up a team of creative workers and compensate them fairly based on the value they have created? All of these are the core problems we've decided to tackle at [Telescoped](https://telescoped.com/). I am lucky to have two amazing co-founders who are every bit as passionate as I am about our mission and a supportive group of angel investors who want to help us change the world.
 
 > "The pursuit of autonomy, opportunities and purpose to the talented people of the world"
-> 
+>
 > Telescoped mission statement
 
 Together we're going to bring the future closer. We're building a company for the long haul, focused on lasting value and in positively impacting people's lives.
