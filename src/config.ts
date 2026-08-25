@@ -20,4 +20,6 @@ export const SITE = {
   dir: "ltr",
   lang: "en",
   timezone: "America/Costa_Rica",
+  // Public by design — appears in page source. Empty string disables the tag.
+  googleAnalyticsId: "G-65J54BKZXX",
 } as const;

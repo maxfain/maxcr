@@ -6,4 +6,7 @@ interface Window {
     getTheme: () => string;
     setTheme: (val: string) => void;
   };
+  dataLayer?: unknown[];
+  gtag?: (...args: unknown[]) => void;
+  __gaAfterSwapBound?: boolean;
 }
