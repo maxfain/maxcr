@@ -135,6 +135,41 @@ const structuredData = {
       )
     }
 
+    {
+      SITE.googleAnalyticsId && (
+        <script
+          is:inline
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${SITE.googleAnalyticsId}`}
+        />
+      )
+    }
+    {
+      // Official GA4 snippet. set:html keeps `arguments` valid (Prettier/TS
+      // choke on it inside a processed <script>). after-swap (not page-load)
+      // records ClientRouter navigations without double-counting first load.
+      SITE.googleAnalyticsId && (
+        <script
+          is:inline
+          set:html={`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', '${SITE.googleAnalyticsId}');
+            if (!window.__gaAfterSwapBound) {
+              window.__gaAfterSwapBound = true;
+              document.addEventListener('astro:after-swap', function () {
+                gtag('config', '${SITE.googleAnalyticsId}', {
+                  page_path: location.pathname + location.search
+                });
+              });
+            }
+          `}
+        />
+      )
+    }
+
     <ClientRouter />
 
     <!-- Minimal inline script to prevent FOUC - sets theme immediately -->
