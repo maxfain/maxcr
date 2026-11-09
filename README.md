@@ -66,15 +66,6 @@ The site is the Cloudflare Pages project `maxcr`, connected to this repository w
 3. `www.max.cr`, if wanted: add a proxied placeholder `A` record (`192.0.2.1`) for `www` and a redirect rule from the "Redirect from WWW to root" template under Rules → Redirect Rules.
 4. Retire the old setup: the `inventionfactory` Worker still serves the previous copy of this site at inventionfactory.ai from the `maxfain/inventionfactory` repository. Remove that custom domain when the domain is repurposed, delete the Worker, and archive that repository. While old links circulate, a zone redirect rule from `inventionfactory.ai` to `https://max.cr` keeps them working.
 
-## Pending artwork
-
-Looptail and Mercian are shown as text-only rows until two crayon illustrations exist. Match the six existing drawings: a child's crayon drawing on a transparent background, thick waxy strokes, wobbly outlines, uneven fill, a palette of blue, orange, red, and brown, generous white space, no text, no shading or gradients. Deliver square transparent files around 1254 × 1254 as WebP with alpha in `site/assets/` (keep a PNG copy in `originals/`).
-
-- `site/assets/looptail.webp`: a friendly crayon creature, a small blue lizard or fox, whose long tail curls back into a loop, with a small red wax seal stuck to the tip of the tail; nothing else in frame.
-- `site/assets/mercian.webp`: a crooked crayon castle gate on a little hill, with a small stick-figure guard standing in the open doorway holding a big orange key; nothing else in frame.
-
-When a file is in place, open `site/index.html`, find that project's row, remove the `project-noart` class, and uncomment the `<figure>` block in the comment next to it.
-
 ## Launch checklist for max.cr
 
 - `https://max.cr/` loads over HTTPS, and `http://` and `www` redirect to it.

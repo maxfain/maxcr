@@ -165,6 +165,50 @@
       "mode": "RGBA",
       "has_alpha": true,
       "contains_transparency": true
+    },
+    {
+      "path": "site/assets/looptail.webp",
+      "bytes": 358642,
+      "sha256": "f22a125c1a836e251a2eda5f2e04427bd51b9f37d4e949172e2d395c7945b7c4",
+      "role": "Looptail illustration; crayon lizard whose tail loops, with a red seal; white background converted to transparency. Supplied by Max, November 2026.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "site/assets/mercian.webp",
+      "bytes": 565372,
+      "sha256": "25c27a3f0a79600d0b8fbb5140924a7d137f11526eecaee1f73c90b9831a591f",
+      "role": "Mercian illustration; crayon castle gate with a guard holding a key; white background converted to transparency. Supplied by Max, November 2026.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "originals/looptail-original.png",
+      "bytes": 785276,
+      "sha256": "da43d20ddbc6de6a1c9a659e14cfd0c1f8b186ce7cad696864d15067a1e4fa14",
+      "role": "PNG copy of the supplied Looptail illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "originals/mercian-original.png",
+      "bytes": 1201554,
+      "sha256": "2c2139d18220f6b4a814f8168863a80c227aa756e49ec717804a7a35ac16ed82",
+      "role": "PNG copy of the supplied Mercian illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
     }
   ],
   "updated": "2026-11-09"
