@@ -49,7 +49,7 @@ const footer = toSubpage(pick(/<footer class="site-footer wrap">[\s\S]*?<\/foote
 const analytics = pick(/<!-- analytics -->[\s\S]*?<!-- \/analytics -->/, 'analytics block');
 const ogImage = pick(/<meta property="og:image" content="[^"]+">\s*<meta property="og:image:width"[^>]+>\s*<meta property="og:image:height"[^>]+>\s*<meta property="og:image:alt"[^>]+>/, 'og:image tags').replace(/\n\s*/g, '\n  ');
 
-function page({ title, description, canonical, bodyClass, main, ogType = 'website' }) {
+function page({ title, description, canonical, bodyClass, main, ogType = 'website', noindex = false }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -61,11 +61,11 @@ function page({ title, description, canonical, bodyClass, main, ogType = 'websit
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:type" content="${ogType}">
-  <meta property="og:url" content="${canonical}">
+${canonical ? `  <meta property="og:url" content="${canonical}">` : '  <meta name="robots" content="noindex">'}
   ${ogImage}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="${SITE}/assets/share-notebook.png">
-  <link rel="canonical" href="${canonical}">
+${canonical ? `  <link rel="canonical" href="${canonical}">` : ''}
   <link rel="alternate" type="application/rss+xml" title="${FEED_TITLE}" href="/rss.xml">
   <title>${esc(title)}</title>
   <link rel="stylesheet" href="/style.css">
@@ -131,6 +131,22 @@ writeFileSync(join(OUT, 'posts', 'index.html'), page({
 ${items}
       </ol>
       <a class="small-link" href="/rss.xml">Follow along via RSS ↗</a>
+    </section>`,
+}));
+
+// ---- 404 page: without one, Cloudflare Pages answers unknown paths with the home page and a 200
+writeFileSync(join(OUT, '404.html'), page({
+  title: `Not found — ${SITE_TITLE}`,
+  description: 'That page is not in this notebook.',
+  canonical: null,
+  bodyClass: 'error-page',
+  main: `    <section class="posts-index wrap" aria-labelledby="notfound-title">
+      <div class="section-opening">
+        <p class="eyebrow section-number">404</p>
+        <h1 id="notfound-title">Not in this<br>notebook.</h1>
+        <p>That page isn’t here. It may have moved when the site was reorganized.</p>
+      </div>
+      <div class="post-footer"><a class="text-link" href="/">Back to the start <span aria-hidden="true">↗</span></a><a class="text-link" href="/posts/">All posts <span aria-hidden="true">↗</span></a></div>
     </section>`,
 }));
 

@@ -8,7 +8,7 @@ It is a static site. There is no backend, no framework, no newsletter service, a
 
 | Path | What it is |
 | --- | --- |
-| `site/` | The deployable site, served at the origin root: `index.html`, `style.css`, `main.js`, `robots.txt`, `_headers`, `_redirects`, `favicon.svg`, `assets/`, and the generated `posts/`, `rss.xml`, and `sitemap.xml`. |
+| `site/` | The deployable site, served at the origin root: `index.html`, `style.css`, `main.js`, `robots.txt`, `_headers`, `_redirects`, `favicon.svg`, `assets/`, and the generated `posts/`, `404.html`, `rss.xml`, and `sitemap.xml`. |
 | `content/posts/` | The blog posts as Markdown with frontmatter. One file per post; the file name is the URL slug. |
 | `content/notebook.json` | The dated notebook entries (one per project) as they appear in the feed. Keep it in step with the disclosures on the home page. |
 | `scripts/build.mjs` | Renders posts into `site/posts/`, fills the Posts list on the home page, and writes the feed and sitemap. |
