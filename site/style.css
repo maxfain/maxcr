@@ -37,5 +37,5 @@
 .post-footer{margin-top:52px;padding-top:26px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:16px 30px}
 .posts-index{padding-bottom:70px}.posts-index .section-opening{padding-top:60px;padding-bottom:30px}
 @media(max-width:780px){.post{padding-top:44px;padding-bottom:56px}.post-body{font-size:17px}.post-lead{font-size:21px}.post-body blockquote{font-size:21px;padding-left:18px}.post-list a{grid-template-columns:85px 1fr 16px}.posts-index .section-opening{padding-top:42px}}
-@media(max-width:580px){.project-agentriders .project-art{grid-row:1}.post-list a{grid-template-columns:1fr 18px}.post h1{font-size:clamp(36px,10.5vw,52px);letter-spacing:-1.4px}.post-body{font-size:17px}}
+@media(max-width:580px){.project-agentriders .project-art,.project-looptail .project-art{grid-row:1}.post-list a{grid-template-columns:1fr 18px}.post h1{font-size:clamp(36px,10.5vw,52px);letter-spacing:-1.4px}.post-body{font-size:17px}}
 .posts-index h1{font-family:var(--serif);font-size:clamp(40px,4.1vw,57px);font-weight:400;line-height:1.13;letter-spacing:-1.7px}

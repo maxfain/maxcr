@@ -1,5 +1,19 @@
 [
   {
+    "id": "entry-looptail",
+    "project": "Looptail",
+    "title": "Keeping the receipts.",
+    "date": "2026-11-09",
+    "description": "Looptail beta snapshot: continuous evals, automated fixes, and a signed audit trail for production AI. Private beta; the notebook describes the public site, not field results."
+  },
+  {
+    "id": "entry-mercian",
+    "project": "Mercian",
+    "title": "Owning the measurement.",
+    "date": "2026-11-09",
+    "description": "Mercian beta snapshot: a verification layer for enterprise AI where experts’ verdicts become ground truth the company owns. Private beta; the notebook describes the public site, not field results."
+  },
+  {
     "id": "entry-popsky",
     "project": "Popsky",
     "title": "A conversation that picks up tomorrow.",

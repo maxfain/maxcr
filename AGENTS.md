@@ -4,6 +4,7 @@
 
 - The site is now Max Faingezicht’s unified personal site at https://max.cr/, merging the Invention Factory notebook with the former max.cr blog. The “Invention Factory” name is retired: the wordmark is “Max Faingezicht.” and inventionfactory.ai is being repurposed.
 - Projects now include AgentRiders and Telescoped, with crayon illustrations Max generated in November 2026 in the same style as the original four. Everything written about them comes from their public sites, Max’s own 2019 post, and AgentRiders’ public flight log.
+- Looptail and Mercian were added in November 2026 as private-beta snapshots written only from their public sites; their rows are text-only until their illustrations arrive (see README, “Pending artwork”). The TEDx post keeps its Spanish description and adds an English translation; do the same for any future Spanish content.
 - Posts are Markdown in `content/posts/`, rendered by `scripts/build.mjs` (`npm run build`). The script copies the home page’s header, footer, and analytics block into sub-pages, so run it after editing those too, and commit the generated files.
 - The owner chose to keep the Google Analytics 4 tag from the old max.cr. Do not add other third-party scripts.
 - The repository is `maxfain/maxcr`, deployed by the Cloudflare Pages project `maxcr`; the earlier `maxfain/inventionfactory` repository is retired. The design workbook from the handoff was kept out of this public repository.

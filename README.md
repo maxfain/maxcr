@@ -16,7 +16,7 @@ It is a static site. There is no backend, no framework, no newsletter service, a
 | `.github/workflows/build-check.yml` | CI: rebuilds the posts, feed, and sitemap and fails if the committed output under `site/` is stale. |
 | `docs/` | The original handoff brief: `BUILD_BRIEF.md`, `CONTENT_AND_LAUNCH.md`, `ASSETS.md`. |
 | `AGENTS.md` | Instructions for coding agents. Read it before changing content. |
-| `assets-manifest.json` | Dimensions and hashes of the images and fonts, including the two illustrations added in November 2026 and the regenerated share image. |
+| `assets-manifest.json` | Dimensions and hashes of the images and fonts, including the illustrations added in November 2026 and the regenerated share image. |
 | `originals/` | PNG masters of the crayon illustrations. Not deployed. |
 | `design-lab/` | The handoff's design workbook and critique archive. Kept for reference, not deployed. |
 | `licenses/` | Copyright and license notice for the bundled URW P052 fonts. Keep it with the fonts. |
@@ -66,6 +66,15 @@ The site is the Cloudflare Pages project `maxcr`, connected to this repository w
 3. `www.max.cr`, if wanted: add a proxied placeholder `A` record (`192.0.2.1`) for `www` and a redirect rule from the "Redirect from WWW to root" template under Rules → Redirect Rules.
 4. Retire the old setup: the `inventionfactory` Worker still serves the previous copy of this site at inventionfactory.ai from the `maxfain/inventionfactory` repository. Remove that custom domain when the domain is repurposed, delete the Worker, and archive that repository. While old links circulate, a zone redirect rule from `inventionfactory.ai` to `https://max.cr` keeps them working.
 
+## Pending artwork
+
+Looptail and Mercian are shown as text-only rows until two crayon illustrations exist. Match the six existing drawings: a child's crayon drawing on a transparent background, thick waxy strokes, wobbly outlines, uneven fill, a palette of blue, orange, red, and brown, generous white space, no text, no shading or gradients. Deliver square transparent files around 1254 × 1254 as WebP with alpha in `site/assets/` (keep a PNG copy in `originals/`).
+
+- `site/assets/looptail.webp`: a friendly crayon creature, a small blue lizard or fox, whose long tail curls back into a loop, with a small red wax seal stuck to the tip of the tail; nothing else in frame.
+- `site/assets/mercian.webp`: a crooked crayon castle gate on a little hill, with a small stick-figure guard standing in the open doorway holding a big orange key; nothing else in frame.
+
+When a file is in place, open `site/index.html`, find that project's row, remove the `project-noart` class, and uncomment the `<figure>` block in the comment next to it.
+
 ## Launch checklist for max.cr
 
 - `https://max.cr/` loads over HTTPS, and `http://` and `www` redirect to it.
@@ -76,7 +85,7 @@ The site is the Cloudflare Pages project `maxcr`, connected to this repository w
 
 ## Updating content
 
-- Project statuses in this version: BasedAgents, AgentRiders, and Telescoped are Live; Popsky is in Closed beta; Keyring is Archived.
+- Project statuses in this version: BasedAgents, AgentRiders, and Telescoped are Live; Looptail and Mercian are in Private beta; Popsky is in Closed beta; Keyring is Archived.
 - Update the footer "Last updated" date only when content actually changes.
 - Do not invent dates, metrics, anecdotes, testimonials, or roadmap promises, and never describe the generated illustrations as childhood drawings. See `AGENTS.md` and `docs/CONTENT_AND_LAUNCH.md` for the full content boundaries.
 
