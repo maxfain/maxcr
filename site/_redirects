@@ -1,0 +1,14 @@
+/design-lab / 301
+/design-lab.html / 301
+/feed.xml /rss.xml 301
+/about /#story 301
+/about/ /#story 301
+/tags /posts/ 301
+/tags/ /posts/ 301
+/archives /posts/ 301
+/archives/ /posts/ 301
+/search /posts/ 301
+/search/ /posts/ 301
+/tags/* /posts/ 301
+/sitemap-index.xml /sitemap.xml 301
+/sitemap-0.xml /sitemap.xml 301

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://max.cr/sitemap.xml

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "entry-popsky",
+    "project": "Popsky",
+    "title": "A conversation that picks up tomorrow.",
+    "date": "2026-11-04",
+    "description": "Popsky beta snapshot: a WhatsApp companion built around memory and personality. Closed beta; the notebook distinguishes the public demo from field evidence."
+  },
+  {
+    "id": "entry-agentriders",
+    "project": "AgentRiders",
+    "title": "“Tests pass” isn’t “safe to ship.”",
+    "date": "2026-10-16",
+    "description": "From AgentRiders’ public flight log: the five-hour flight that shipped accounts and logging, and the two security holes a review pass caught after thirty-eight tests passed."
+  },
+  {
+    "id": "entry-keyring",
+    "project": "Keyring",
+    "title": "Keeping the lesson. Closing the experiment.",
+    "date": "2026-10-02",
+    "description": "An archive note from Keyring’s public development record: cached command-line tools, setup instructions, and the retirement of the experiment."
+  },
+  {
+    "id": "entry-basedagents",
+    "project": "BasedAgents",
+    "title": "An easy fix wasn’t the useful fix.",
+    "date": "2026-09-23",
+    "description": "Three BasedAgents bounties led to a merged VisiData repair. The review showed why acceptance checks need to exercise actual behavior."
+  },
+  {
+    "id": "entry-telescoped",
+    "project": "Telescoped",
+    "title": "The question I couldn’t get out of my head.",
+    "date": "2019-12-23",
+    "description": "Why couldn’t remote work on your own terms happen at scale? The question behind Telescoped, from the 2019 post “Work is Changing.”"
+  }
+]

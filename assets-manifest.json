@@ -1,0 +1,126 @@
+{
+  "snapshot_date": "2026-11-04",
+  "source_commit": "dddc3deb40318f872a0a45da9811b01e58a99673",
+  "assets": [
+    {
+      "path": "site/assets/companion.webp",
+      "bytes": 905378,
+      "sha256": "0dffea78f33d26ae39215e3b79ae5bdf2d8310d12c4513c4ca747d02c4b88dc3",
+      "role": "Popsky illustration; crayon companion; transparent raster.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "site/assets/hero-inventor.webp",
+      "bytes": 874146,
+      "sha256": "eef08088a8d0731894ff39a34275431268f853578a0af6e13b2d003e172dfd9b",
+      "role": "Hero illustration; newly generated childlike Vitruvian inventor; transparent raster.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "site/assets/keys.webp",
+      "bytes": 1006408,
+      "sha256": "6a6977eb0206ab6606bf09d6af1b9d145dc31986d70a4b9a477b822c68866f6c",
+      "role": "Keyring illustration; mismatched crayon keys; transparent raster.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "site/assets/notebook-italic.otf",
+      "bytes": 109824,
+      "sha256": "1feac6055211cf5c6c812c026e398195070f174064cc4d390f0db01647443b0e",
+      "role": "Unmodified URW P052 Italic font file, renamed for local use."
+    },
+    {
+      "path": "site/assets/notebook-roman.otf",
+      "bytes": 110236,
+      "sha256": "f054a7389d8d0e9f4c5f7b4c21feb7e2b14bec8004a1e92778a78d149524eea9",
+      "role": "Unmodified URW P052 Roman font file, renamed for local use."
+    },
+    {
+      "path": "site/assets/passport.webp",
+      "bytes": 1035822,
+      "sha256": "1ccb0e92f7323f7ada383a925c934aaa468cee09607c05d01117112dd3185b72",
+      "role": "BasedAgents illustration; crayon robot passport; transparent raster.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "site/assets/revenue-engine.jpg",
+      "bytes": 338311,
+      "sha256": "7957daff63799b0597aa70b07f8059fed931c1eb9ca64ee9335084c7ce9087de",
+      "role": "Authentic Wiley book-cover mockup from the official book page; downloaded without alteration.",
+      "width": 1434,
+      "height": 1097,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "path": "site/assets/share-notebook.png",
+      "bytes": 1805043,
+      "sha256": "be61df1cfb09bc6fbb8177f57a943b2278d9c2e057d130d83bba007b7a216d70",
+      "role": "Open Graph / social preview; finished composition with approved headline and author credit.",
+      "width": 1730,
+      "height": 909,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "path": "originals/companion-original.png",
+      "bytes": 1947653,
+      "sha256": "e873f19e0bf3d622bedd1d87d91f9738ebebce2122befaafc34a2d06032df74e",
+      "role": "Original PNG master of the corresponding generated illustration.",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "originals/hero-inventor-original.png",
+      "bytes": 1095885,
+      "sha256": "b66e5a9ee659be15131e14d788ba838203ac7b32a73bc1ac68e5fb4b2506def1",
+      "role": "Original PNG master of the corresponding generated illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "originals/keys-original.png",
+      "bytes": 1264593,
+      "sha256": "bc43231beea711e68a8824b8a27011641defaedb414565e7a391ec485b2c3db5",
+      "role": "Original PNG master of the corresponding generated illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "originals/passport-original.png",
+      "bytes": 1379133,
+      "sha256": "5f56b86de36684d42d7913678771b3e0818c4c6c0c1f6142130d80016240cac4",
+      "role": "Original PNG master of the corresponding generated illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    }
+  ]
+}

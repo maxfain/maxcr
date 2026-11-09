@@ -1,180 +1,94 @@
-# AstroPaper 📄
+# Max Faingezicht — max.cr
 
-![AstroPaper](public/astropaper-og.jpg)
-[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+Max Faingezicht's personal site, built for **https://max.cr/**: a notebook of the things he is building, plus the essays that used to live on the old max.cr blog.
 
-AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+It is a static site. There is no backend, no framework, no newsletter service, and no build step at deploy time. A small script renders the Markdown posts into HTML, and the generated files are committed. The only third-party script is the Google Analytics 4 tag carried over from the old max.cr.
 
-Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
+## Repository layout
 
-## 🔥 Features
+| Path | What it is |
+| --- | --- |
+| `site/` | The deployable site, served at the origin root: `index.html`, `style.css`, `main.js`, `robots.txt`, `_headers`, `_redirects`, `favicon.svg`, `assets/`, and the generated `posts/`, `rss.xml`, and `sitemap.xml`. |
+| `content/posts/` | The blog posts as Markdown with frontmatter. One file per post; the file name is the URL slug. |
+| `content/notebook.json` | The dated notebook entries (one per project) as they appear in the feed. Keep it in step with the disclosures on the home page. |
+| `scripts/build.mjs` | Renders posts into `site/posts/`, fills the Posts list on the home page, and writes the feed and sitemap. |
+| `wrangler.jsonc` | Cloudflare Pages configuration: names the project `maxcr` and points its output directory at `site/`. |
+| `.github/workflows/build-check.yml` | CI: rebuilds the posts, feed, and sitemap and fails if the committed output under `site/` is stale. |
+| `docs/` | The original handoff brief: `BUILD_BRIEF.md`, `CONTENT_AND_LAUNCH.md`, `ASSETS.md`. |
+| `AGENTS.md` | Instructions for coding agents. Read it before changing content. |
+| `assets-manifest.json` | Dimensions and hashes of the handoff's images and fonts (the share image has since been regenerated). |
+| `originals/` | PNG masters of the crayon illustrations. Not deployed. |
+| `design-lab/` | The handoff's design workbook and critique archive. Kept for reference, not deployed. |
+| `licenses/` | Copyright and license notice for the bundled URW P052 fonts. Keep it with the fonts. |
 
-- [x] type-safe markdown
-- [x] super fast performance
-- [x] accessible (Keyboard/VoiceOver)
-- [x] responsive (mobile ~ desktops)
-- [x] SEO-friendly
-- [x] light & dark mode
-- [x] fuzzy search
-- [x] draft posts & pagination
-- [x] sitemap & rss feed
-- [x] followed best practices
-- [x] highly customizable
-- [x] dynamic OG image generation for blog posts [#15](https://github.com/satnaing/astro-paper/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
+## Preview locally
 
-_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
-
-## ✅ Lighthouse Score
-
-<p align="center">
-  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
-    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
-  </a>
-</p>
-
-## 🚀 Project Structure
-
-Inside of AstroPaper, you'll see the following folders and files:
-
-```bash
-/
-├── public/
-│   ├── pagefind/ # auto-generated when build
-│   ├── favicon.svg
-│   └── astropaper-og.jpg
-├── src/
-│   ├── assets/
-│   │   ├── icons/
-│   │   └── images/
-│   ├── components/
-│   ├── data/
-│   │   └── blog/
-│   │       └── some-blog-posts.md
-│   ├── layouts/
-│   ├── pages/
-│   ├── scripts/
-│   ├── styles/
-│   ├── utils/
-│   ├── config.ts
-│   ├── constants.ts
-│   ├── content.config.ts
-│   ├── env.d.ts
-│   └── remark-collapse.d.ts
-└── astro.config.ts
+```sh
+npm install        # once; installs the Markdown renderer
+npm run build      # renders posts, feed, sitemap, and the home-page post list
+npm run preview    # http://localhost:8000/ (plain file server)
+npm run dev        # http://localhost:8788/ with the redirect and header rules applied (wrangler pages dev)
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Writing a post
 
-Any static assets, like images, can be placed in the `public/` directory.
+1. Add `content/posts/YYYY-MM-DD-your-slug.md`:
 
-All blog posts are stored in `src/data/blog` directory.
+   ```md
+   ---
+   title: "Your title"
+   pubDatetime: 2026-11-09T12:00:00Z
+   description: "One or two sentences shown as the lead and in the feed."
+   tags: ["future-of-work"]
+   draft: false
+   ---
 
-## 📖 Documentation
+   Body in Markdown. Links to other sites open in a new tab automatically.
+   ```
 
-Documentation can be read in two formats\_ _markdown_ & _blog post_.
+2. Run `npm run build`. The post appears at `/posts/YYYY-MM-DD-your-slug/`, in the Posts section of the home page, in `/posts/`, in `rss.xml`, and in `sitemap.xml`.
+3. Commit the Markdown together with the generated files under `site/`.
 
-- Configuration - [markdown](src/data/blog/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
-- Add Posts - [markdown](src/data/blog/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
-- Customize Color Schemes - [markdown](src/data/blog/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
-- Predefined Color Schemes - [markdown](src/data/blog/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
+Images go in `site/assets/` and are referenced as `/assets/name.webp`. For a video, use the `video-embed` wrapper with a `youtube-nocookie.com` iframe, as the TEDx post does. Set `draft: true` to keep a post out of the build.
 
-## 💻 Tech Stack
+## Adding a notebook entry
 
-**Main Framework** - [Astro](https://astro.build/)  
-**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
-**Styling** - [TailwindCSS](https://tailwindcss.com/)  
-**UI/UX** - [Figma Design File](https://www.figma.com/community/file/1356898632249991861)  
-**Static Search** - [FuseJS](https://pagefind.app/)  
-**Icons** - [Tablers](https://tabler-icons.io/)  
-**Code Formatting** - [Prettier](https://prettier.io/)  
-**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
-**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
-**Linting** - [ESLint](https://eslint.org)
+The dated entries inside each project's "Open the notebook" disclosure are hand-written HTML in `site/index.html`. To add or change one: edit the disclosure and the "Latest entries" list, add or update the matching object in `content/notebook.json` so the feed carries it, run `npm run build`, and update the footer's "Last updated" date. Keep event dates distinct from edit dates.
 
-## 👨🏻‍💻 Running Locally
+## Deploy
 
-You can start using this project locally by running the following command in your desired directory:
+The site is the Cloudflare Pages project `maxcr`, connected to this repository with production branch `main`, and it already holds the `max.cr` custom domain. Pages builds nothing: the project settings should be **Framework preset** None, **Build command** empty, and **Build output directory** `site` (`wrangler.jsonc` declares the same output directory). Every push to `main` deploys production; pushes to other branches get preview URLs on `pages.dev`, which Cloudflare serves with a `noindex` header, and `site/_headers` adds that header to the production `pages.dev` copy so only max.cr is indexed.
 
-```bash
-# pnpm
-pnpm create astro@latest --template satnaing/astro-paper
+### Cutting over from the Astro blog (owner steps, once)
 
-# npm
-npm create astro@latest -- --template satnaing/astro-paper
+1. The first `main` build after this change fails while the project still carries the Astro build command. In the Pages project open **Settings → Builds & deployments → Build configuration**, set Framework preset to None, clear the build command, set the output directory to `site`, and save. Then open the failed deployment and choose **Retry deployment**.
+2. Check `https://max.cr/`: the notebook loads; `/posts/`, each post, `/rss.xml`, and `/sitemap.xml` load; `/about`, `/tags`, `/archives`, `/search`, `/feed.xml`, and `/sitemap-index.xml` redirect.
+3. `www.max.cr`, if wanted: add a proxied placeholder `A` record (`192.0.2.1`) for `www` and a redirect rule from the "Redirect from WWW to root" template under Rules → Redirect Rules.
+4. Retire the old setup: the `inventionfactory` Worker still serves the previous copy of this site at inventionfactory.ai from the `maxfain/inventionfactory` repository. Remove that custom domain when the domain is repurposed, delete the Worker, and archive that repository. While old links circulate, a zone redirect rule from `inventionfactory.ai` to `https://max.cr` keeps them working.
 
-# yarn
-yarn create astro --template satnaing/astro-paper
+## Pending artwork
 
-# bun
-bun create astro@latest -- --template satnaing/astro-paper
-```
+AgentRiders and Telescoped are shown as text-only rows until two crayon illustrations exist. Match the four existing drawings: a child's crayon drawing on a transparent background, thick waxy strokes, wobbly outlines, uneven fill, a palette of blue, orange, red, and brown, generous white space, no text, no shading or gradients. Deliver square transparent PNGs around 1254 × 1254 (keep the master in `originals/`) and a WebP copy with alpha in `site/assets/`.
 
-Then start the project by running the following commands:
+- `site/assets/agentriders.webp`: a small smiling stick-figure rider sitting on a round, friendly blue crayon dragon with little orange wings, holding red reins; nothing else in frame.
+- `site/assets/telescoped.webp`: a crayon telescope on a wobbly three-legged tripod, pointed up and to the right at a crooked orange star, with two tiny stick figures shaking hands beside the star; nothing else in frame.
 
-```bash
-# install dependencies if you haven't done so in the previous step.
-pnpm install
+When a file is in place, open `site/index.html`, find that project's row, remove the `project-noart` class, and uncomment the `<figure>` block in the comment next to it.
 
-# start running the project
-pnpm run dev
-```
+## Launch checklist for max.cr
 
-As an alternative approach, if you have Docker installed, you can use Docker to run this project locally. Here's how:
+- `https://max.cr/` loads over HTTPS, and `http://` and `www` redirect to it.
+- `https://max.cr/#entry-basedagents`, `#entry-agentriders`, `#entry-telescoped`, `#entry-popsky`, and `#entry-keyring` open the matching notebook entry.
+- `https://max.cr/rss.xml` validates and lists the notebook entries and the posts; `https://max.cr/sitemap.xml` is served.
+- `https://max.cr/assets/share-notebook.png` is publicly fetchable (1600 × 840) so social previews render.
+- Recheck time-sensitive facts if launching later: book publication date, project availability, and external link destinations.
 
-```bash
-# Build the Docker image
-docker build -t astropaper .
+## Updating content
 
-# Run the Docker container
-docker run -p 4321:80 astropaper
-```
+- Project statuses in this version: BasedAgents, AgentRiders, and Telescoped are Live; Popsky is in Closed beta; Keyring is Archived.
+- Update the footer "Last updated" date only when content actually changes.
+- Do not invent dates, metrics, anecdotes, testimonials, or roadmap promises, and never describe the generated illustrations as childhood drawings. See `AGENTS.md` and `docs/CONTENT_AND_LAUNCH.md` for the full content boundaries.
 
-## Google Site Verification (optional)
+## Fonts
 
-You can easily add your [Google Site Verification HTML tag](https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag) in AstroPaper using an environment variable. This step is optional. If you don't add the following environment variable, the google-site-verification tag won't appear in the HTML `<head>` section.
-
-```bash
-# in your environment variable file (.env)
-PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value
-```
-
-> See [this discussion](https://github.com/satnaing/astro-paper/discussions/334#discussioncomment-10139247) for adding AstroPaper to the Google Search Console.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-> **_Note!_** For `Docker` commands we must have it [installed](https://docs.docker.com/engine/install/) in your machine.
-
-| Command                              | Action                                                                                                                           |
-| :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `pnpm install`                       | Installs dependencies                                                                                                            |
-| `pnpm run dev`                       | Starts local dev server at `localhost:4321`                                                                                      |
-| `pnpm run build`                     | Build your production site to `./dist/`                                                                                          |
-| `pnpm run preview`                   | Preview your build locally, before deploying                                                                                     |
-| `pnpm run format:check`              | Check code format with Prettier                                                                                                  |
-| `pnpm run format`                    | Format codes with Prettier                                                                                                       |
-| `pnpm run sync`                      | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
-| `pnpm run lint`                      | Lint with ESLint                                                                                                                 |
-| `docker compose up -d`               | Run AstroPaper on docker, You can access with the same hostname and port informed on `dev` command.                              |
-| `docker compose run app npm install` | You can run any command above into the docker container.                                                                         |
-| `docker build -t astropaper .`       | Build Docker image for AstroPaper.                                                                                               |
-| `docker run -p 4321:80 astropaper`   | Run AstroPaper on Docker. The website will be accessible at `http://localhost:4321`.                                             |
-
-> **_Warning!_** Windows PowerShell users may need to install the [concurrently package](https://www.npmjs.com/package/concurrently) if they want to [run diagnostics](https://docs.astro.build/en/reference/cli-reference/#astro-check) during development (`astro check --watch & astro dev`). For more info, see [this issue](https://github.com/satnaing/astro-paper/issues/113).
-
-## ✨ Feedback & Suggestions
-
-If you have any suggestions/feedback, you can contact me via [my email](mailto:contact@satnaing.dev). Alternatively, feel free to open an issue if you find bugs or want to request new features.
-
-## 📜 License
-
-Licensed under the MIT License, Copyright © 2025
-
----
-
-Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
+`NotebookSerif` is URW P052 (Roman and Italic) from the URW base35 collection, distributed under AGPL-3 with a font exception. The original notice is in `licenses/URW-base35-copyright-and-license.txt`. Body text uses the system Arial/Helvetica stack.
