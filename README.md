@@ -57,7 +57,7 @@ The dated entries inside each project's "Open the notebook" disclosure are hand-
 
 ## Deploy
 
-The site is the Cloudflare Pages project `maxcr`, connected to this repository with production branch `main`, and it already holds the `max.cr` custom domain. Pages builds nothing: the project settings should be **Framework preset** None, **Build command** empty, and **Build output directory** `site` (`wrangler.jsonc` declares the same output directory). Every push to `main` deploys production; pushes to other branches get preview URLs on `pages.dev`, which Cloudflare serves with a `noindex` header, and `site/_headers` adds that header to the production `pages.dev` copy so only max.cr is indexed.
+The site is the Cloudflare Pages project `maxcr`, connected to this repository with production branch `main`, and it already holds the `max.cr` custom domain. Pages builds nothing: the project settings should be **Framework preset** None, **Build command** empty, and **Build output directory** `site` (`wrangler.jsonc` declares the same output directory). Every push to `main` deploys production; pushes to other branches get preview URLs on `pages.dev`, which Cloudflare serves with a `noindex` header, and `site/_headers` adds that header to the production `pages.dev` copy so only max.cr is indexed. The same file sets a one-hour browser cache on `assets/`, kept short so a response cached before an asset exists cannot linger; note that the zone's Browser Cache TTL setting can lengthen that value on max.cr.
 
 ### Cutting over from the Astro blog (owner steps, once)
 
