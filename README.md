@@ -16,7 +16,7 @@ It is a static site. There is no backend, no framework, no newsletter service, a
 | `.github/workflows/build-check.yml` | CI: rebuilds the posts, feed, and sitemap and fails if the committed output under `site/` is stale. |
 | `docs/` | The original handoff brief: `BUILD_BRIEF.md`, `CONTENT_AND_LAUNCH.md`, `ASSETS.md`. |
 | `AGENTS.md` | Instructions for coding agents. Read it before changing content. |
-| `assets-manifest.json` | Dimensions and hashes of the handoff's images and fonts (the share image has since been regenerated). |
+| `assets-manifest.json` | Dimensions and hashes of the images and fonts, including the two illustrations added in November 2026 and the regenerated share image. |
 | `originals/` | PNG masters of the crayon illustrations. Not deployed. |
 | `design-lab/` | The handoff's design workbook and critique archive. Kept for reference, not deployed. |
 | `licenses/` | Copyright and license notice for the bundled URW P052 fonts. Keep it with the fonts. |
@@ -65,15 +65,6 @@ The site is the Cloudflare Pages project `maxcr`, connected to this repository w
 2. Check `https://max.cr/`: the notebook loads; `/posts/`, each post, `/rss.xml`, and `/sitemap.xml` load; `/about`, `/tags`, `/archives`, `/search`, `/feed.xml`, and `/sitemap-index.xml` redirect.
 3. `www.max.cr`, if wanted: add a proxied placeholder `A` record (`192.0.2.1`) for `www` and a redirect rule from the "Redirect from WWW to root" template under Rules → Redirect Rules.
 4. Retire the old setup: the `inventionfactory` Worker still serves the previous copy of this site at inventionfactory.ai from the `maxfain/inventionfactory` repository. Remove that custom domain when the domain is repurposed, delete the Worker, and archive that repository. While old links circulate, a zone redirect rule from `inventionfactory.ai` to `https://max.cr` keeps them working.
-
-## Pending artwork
-
-AgentRiders and Telescoped are shown as text-only rows until two crayon illustrations exist. Match the four existing drawings: a child's crayon drawing on a transparent background, thick waxy strokes, wobbly outlines, uneven fill, a palette of blue, orange, red, and brown, generous white space, no text, no shading or gradients. Deliver square transparent PNGs around 1254 × 1254 (keep the master in `originals/`) and a WebP copy with alpha in `site/assets/`.
-
-- `site/assets/agentriders.webp`: a small smiling stick-figure rider sitting on a round, friendly blue crayon dragon with little orange wings, holding red reins; nothing else in frame.
-- `site/assets/telescoped.webp`: a crayon telescope on a wobbly three-legged tripod, pointed up and to the right at a crooked orange star, with two tiny stick figures shaking hands beside the star; nothing else in frame.
-
-When a file is in place, open `site/index.html`, find that project's row, remove the `project-noart` class, and uncomment the `<figure>` block in the comment next to it.
 
 ## Launch checklist for max.cr
 

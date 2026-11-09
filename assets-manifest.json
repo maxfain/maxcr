@@ -69,16 +69,6 @@
       "has_alpha": false
     },
     {
-      "path": "site/assets/share-notebook.png",
-      "bytes": 1805043,
-      "sha256": "be61df1cfb09bc6fbb8177f57a943b2278d9c2e057d130d83bba007b7a216d70",
-      "role": "Open Graph / social preview; finished composition with approved headline and author credit.",
-      "width": 1730,
-      "height": 909,
-      "mode": "RGB",
-      "has_alpha": false
-    },
-    {
       "path": "originals/companion-original.png",
       "bytes": 1947653,
       "sha256": "e873f19e0bf3d622bedd1d87d91f9738ebebce2122befaafc34a2d06032df74e",
@@ -121,6 +111,61 @@
       "mode": "RGBA",
       "has_alpha": true,
       "contains_transparency": true
+    },
+    {
+      "path": "site/assets/agentriders.webp",
+      "bytes": 399792,
+      "sha256": "f7aebb5011bfeddc2d2ea77ec54fdf675abae99b2b581297f916abdb33768381",
+      "role": "AgentRiders illustration; crayon rider on a friendly dragon; transparent raster. Supplied by Max, November 2026.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "site/assets/telescoped.webp",
+      "bytes": 289150,
+      "sha256": "06c42d6269e22a142cde8dbbe26de1bcb3a7af126cad0e38404fedc844cfa6de",
+      "role": "Telescoped illustration; crayon telescope, star, and two figures shaking hands; transparent raster. Supplied by Max, November 2026.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "site/assets/share-notebook.png",
+      "bytes": 413100,
+      "sha256": "8139ff26f310863ac5562fcf58b53614f449a2fc9de4f6b2a4acb741f30b6ade",
+      "role": "Open Graph / social preview; regenerated November 2026 with the Max Faingezicht wordmark.",
+      "width": 1600,
+      "height": 840,
+      "mode": "RGB",
+      "has_alpha": false
+    },
+    {
+      "path": "originals/agentriders-original.png",
+      "bytes": 1126835,
+      "sha256": "89cb98f710c376b4b2138eb58ba7671aad8071c3ad61dfb709f829d2dbad8c15",
+      "role": "PNG copy of the supplied AgentRiders illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "originals/telescoped-original.png",
+      "bytes": 855012,
+      "sha256": "c3e47d38202e218ce8a41bfbcc526f19ed93ee845bc4f1f361cfa02329e54b46",
+      "role": "PNG copy of the supplied Telescoped illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
     }
-  ]
+  ],
+  "updated": "2026-11-09"
 }
