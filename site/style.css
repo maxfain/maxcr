@@ -41,3 +41,8 @@
 .posts-index h1{font-family:var(--serif);font-size:clamp(40px,4.1vw,57px);font-weight:400;line-height:1.13;letter-spacing:-1.7px}
 .art-link{display:block;transition:transform .2s}.art-link:hover{transform:translateY(-3px)}.art-link:focus-visible{outline-offset:12px}
 @media(prefers-reduced-motion:reduce){.art-link:hover{transform:none}}
+
+/* Drawings come first in the markup; even-numbered rows show them on the right. Phones keep them first. */
+.inventions .project:nth-of-type(even) .project-art{order:2}
+.project-description a{text-decoration:underline;text-decoration-color:#a5a094;text-underline-offset:4px}.project-description a:hover{color:var(--red)}
+@media(max-width:580px){.inventions .project:nth-of-type(even) .project-art{order:0}}

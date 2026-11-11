@@ -51,6 +51,12 @@ npm run dev        # http://localhost:8788/ with the redirect and header rules a
 
 Images go in `site/assets/` and are referenced as `/assets/name.webp`. For a video, use the `video-embed` wrapper with a `youtube-nocookie.com` iframe, as the TEDx post does. Set `draft: true` to keep a post out of the build.
 
+## Adding a project
+
+Copy one of the `<article class="project …">` blocks in `site/index.html`. Keep the drawing's `<figure>` first and the `.project-copy` second; the stylesheet alternates which side the drawing sits on by position, so the markup order never changes. Give the row the next serial number, a status chip (`status-live`, `status-archived`, or the plain blue chip for betas), an evidence panel drawn from public sources, and a notebook disclosure with a dated entry. Add that entry to the "Latest entries" list and to `content/notebook.json`, then run `npm run build`.
+
+Drawings: a square transparent WebP in `site/assets/` (around 1254 × 1254, in the same crayon style; a PNG copy goes in `originals/`). A drawing delivered on white can be converted to transparency; the manifest records every file.
+
 ## Adding a notebook entry
 
 The dated entries inside each project's "Open the notebook" disclosure are hand-written HTML in `site/index.html`. To add or change one: edit the disclosure and the "Latest entries" list, add or update the matching object in `content/notebook.json` so the feed carries it, run `npm run build`, and update the footer's "Last updated" date. Keep event dates distinct from edit dates.
@@ -76,7 +82,7 @@ The site is the Cloudflare Pages project `maxcr`, connected to this repository w
 
 ## Updating content
 
-- Project statuses in this version: BasedAgents, AgentRiders, and Telescoped are Live; Looptail and Mercian are in Private beta; Popsky is in Closed beta; Keyring is Archived.
+- Project statuses in this version: BasedAgents, AgentRiders, Telescoped, and GTM Unpacked are Live; Looptail and Mercian are in Private beta; Popsky is in Closed beta; Keyring is Archived.
 - Update the footer "Last updated" date only when content actually changes.
 - Do not invent dates, metrics, anecdotes, testimonials, or roadmap promises, and never describe the generated illustrations as childhood drawings. See `AGENTS.md` and `docs/CONTENT_AND_LAUNCH.md` for the full content boundaries.
 

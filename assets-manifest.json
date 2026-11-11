@@ -209,7 +209,29 @@
       "mode": "RGBA",
       "has_alpha": true,
       "contains_transparency": true
+    },
+    {
+      "path": "site/assets/gtmunpacked.webp",
+      "bytes": 240152,
+      "sha256": "7b9d866509d6e5b9f3cac9988cde7177064273cd5c09e0a958a0ca318d19f6a5",
+      "role": "GTM Unpacked illustration; crayon engine with inputs and an output arrow; white background converted to transparency. Supplied by Max, November 2026.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
+    },
+    {
+      "path": "originals/gtmunpacked-original.png",
+      "bytes": 501635,
+      "sha256": "c32ef02b335c8cfd15a02f474822837b6ee3e466b41f14681319634c21db6473",
+      "role": "PNG copy of the supplied GTM Unpacked illustration.",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "has_alpha": true,
+      "contains_transparency": true
     }
   ],
-  "updated": "2026-11-09"
+  "updated": "2026-11-11"
 }
